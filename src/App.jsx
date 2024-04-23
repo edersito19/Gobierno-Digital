@@ -1,16 +1,24 @@
-import  Header from "../src/components/Header";
-import  Card from "../src/components/Card";
+import Home from "./pages/Home";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import Details from "./pages/Details";
+import Footer from "./components/Footer";
+import Error404 from "./pages/Error404";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-    <Header/>
-    <Card/>
-      <h2 className="text-[#2E3057] text-4xl font-bold text-center">
-     Codigo de prueba 
-        </h2>
+      <HashRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/details/:pokemonId" element={<Details />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </HashRouter>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
