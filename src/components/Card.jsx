@@ -1,4 +1,10 @@
+import { useFetch } from "../hooks/UseFetch";
 import { NavLink } from "react-router-dom";
+import typeColors from "../utilities/typeColors";
+import capitalizeFirstLetter from "../utilities/capitalizeFirstLetter";
+import { Loading } from "./Loading";
+import scrollTop from "../utilities/scrollTop";
+import { useState } from "react";
 
 export default  function Card(){
     const [offset, setOffset] = useState(0);
